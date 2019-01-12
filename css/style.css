@@ -1,0 +1,83 @@
+/* 撑满整个高度 为了section到100%所以body也要100%以此类推 */
+html, body, section {
+  height: 100%;
+  overflow: hidden;
+}
+
+.layout {
+  border: 5px solid rgb(235, 175, 152);
+  display: flex;
+  margin: 0 auto;
+  /* width: 600px; */
+  min-width: 800px;
+  height: calc(100% - 24vh);
+}
+
+.layout .picture img {
+  margin: 30px 5vh;
+  width: 40vh;
+}
+
+.cover {
+  border: 1px solid red;
+  background: black;
+  opacity: 0.5;
+}
+
+.picture {
+  border: 5px solid lightblue;
+  width: 50vh;
+  /* height: 80vh; */
+}
+
+.name {
+  border: 5px solid rgb(52, 20, 139);
+  flex: 1;
+  /* height: 80vh; */
+}
+
+.name .album-name {
+  display: inline-block;
+  padding: 0.5vh 1vh;
+  font-size: 2vh;
+  background: rgb(0, 1, 75);
+  color: #fff;
+}
+
+.name .name-button {
+  color: #fff;
+}
+
+footer {
+  border: 5px solid rgb(33, 156, 64);
+  height: 24vh;
+  background: rgba(255, 255, 255, 0.5);
+}
+
+.iconfont {
+  font: 3vh;
+}
+
+.background {
+  position: absolute;
+  z-index: -1;
+  top: -10px;
+  right: -10px;
+  bottom: -10px;
+  left: -10px;
+  background: url(https://pic.xiami.net/images/album/img63/92563/4562501312188937.jpg?x-oss-process=image/resize,limit_0,s_410,m_fill) no-repeat;
+  background-size: cover;
+  filter: blur(4px);   
+  /* 滤镜 */
+}
+
+.background::before {
+  content: '';
+  position: absolute;
+  top: 0px;
+  right: 0px;
+  bottom: 0px;
+  left: 0px;
+  background: rgba(0, 0, 0, 0.3);
+  /* 让背景和专辑封面略有区分 */
+}
