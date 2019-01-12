@@ -13,9 +13,36 @@ html, body, section {
   height: calc(100% - 24vh);
 }
 
-.layout .picture img {
+.layout .picture figure { 
+  border: 5px solid rgb(139, 40, 0); 
+  background: url(https://pic.xiami.net/images/album/img63/92563/4562501312188937.jpg?x-oss-process=image/resize,limit_0,s_410,m_fill) no-repeat;
   margin: 30px 5vh;
   width: 40vh;
+  height: 40vh;
+}
+
+.layout .picture .pic-button {
+  border: 5px solid rgb(139, 40, 0);
+  display: flex;
+  justify-content: space-between;
+  margin: 0 auto;
+  width: 40vh;
+}
+
+.layout .picture .pic-button .iconfont {
+  border: 1px solid red;
+  font-size: 6vh;
+  padding: 0 2vh;
+  color: #444;
+  cursor: pointer;
+}
+
+/* .iconfont.icon-loveit {
+  margin-left: -5vh;
+} */
+
+.iconfont.icon-pause {
+  display: none;
 }
 
 .cover {
@@ -33,11 +60,13 @@ html, body, section {
 .name {
   border: 5px solid rgb(52, 20, 139);
   flex: 1;
+  padding-left: 6vh;
   /* height: 80vh; */
 }
 
 .name .album-name {
   display: inline-block;
+  margin-top: 30px;
   padding: 0.5vh 1vh;
   font-size: 2vh;
   background: rgb(0, 1, 75);
@@ -46,6 +75,12 @@ html, body, section {
 
 .name .name-button {
   color: #fff;
+}
+
+.name .song-name {
+  margin: 3vh 0;
+  color: #fff;
+  font-size: 4vh;
 }
 
 footer {
