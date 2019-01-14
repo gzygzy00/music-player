@@ -53,12 +53,6 @@ html, body, section {
   display: none;
 }
 
-.cover {
-  border: 1px solid red;
-  background: black;
-  opacity: 0.5;
-}
-
 .picture {
   border: 5px solid lightblue;
   width: 50vh;
@@ -221,6 +215,7 @@ footer ul {
 }
 
 footer ul li {
+  margin: 0 1vh;
   cursor: pointer;
 }
 
@@ -233,6 +228,7 @@ footer ul li .cover{
   width: 18vh;
   height: 16vh;
   background-size: cover;
+  background-position: center center;
 }
 
 footer ul li h3{
