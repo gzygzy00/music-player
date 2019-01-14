@@ -8,8 +8,7 @@ html, body, section {
   border: 5px solid rgb(235, 175, 152);
   display: flex;
   margin: 0 auto;
-  /* width: 600px; */
-  min-width: 700px;
+  width: 160vh;
   height: calc(100% - 24vh);
 }
 
@@ -86,6 +85,7 @@ html, body, section {
   border: 1px solid rgb(33, 156, 64);
   display: flex;
   /* justify-content: space-between; */
+  margin-right: 5vh;
   margin-top: 10vh;
   color: #fff;
 }
@@ -145,11 +145,7 @@ html, body, section {
   color: rgba(255, 255, 255, 0.8);
 }
 
-footer {
-  border: 5px solid rgb(33, 156, 64);
-  height: 24vh;
-  background: rgba(255, 255, 255, 0.5);
-}
+
 
 .background {
   position: absolute;
@@ -173,4 +169,74 @@ footer {
   left: 0px;
   background: rgba(0, 0, 0, 0.3);
   /* 让背景和专辑封面略有区分 */
+}
+
+footer {
+  border: 5px solid rgb(33, 156, 64);
+  margin: 0 auto;
+  height: 24vh;
+  background: rgba(255, 255, 255, 0.5);
+  box-shadow: 0 -.25vh .25vh .25vh rgba(0, 0, 0, 0.8);
+  min-width: 1200px;
+}
+
+footer .box {
+  position: relative;
+}
+
+footer .box.layout .iconfont {
+  /* border: 1px solid rgb(33, 156, 64); */
+  position: absolute;
+  margin-top: 5vh;
+  font-size: 8vh;
+  color: rgba(0, 0, 0, 0.3);
+  cursor: pointer;
+  transition: color .4s;
+  opacity: 0;
+}
+
+
+footer .icon-arrow_left {
+  left: -8vh;
+}
+
+footer .icon-arrow_right {
+  right: -8vh;
+}
+
+footer:hover .box .iconfont {
+  opacity: 1;
+}
+
+footer .box.layout .iconfont:hover {
+  font-size: 8vh;
+  color: #fff;
+}
+
+footer ul {
+  border: 5px solid rgb(33, 156, 64);
+  display: flex;
+  margin: 1vh auto 0;
+  width: 160vh;
+}
+
+footer ul li {
+  cursor: pointer;
+}
+
+footer ul li:hover {
+  box-shadow: 0 -.25vh .25vh .25vh rgba(255, 255, 255, 0.8);
+}
+
+footer ul li .cover{
+  border: 5px solid rgb(33, 156, 64);
+  width: 18vh;
+  height: 16vh;
+  background-size: cover;
+}
+
+footer ul li h3{
+  font-size: 2vh;
+  text-align: center;
+  color: rgba(0, 0, 0, 0.8);
 }
