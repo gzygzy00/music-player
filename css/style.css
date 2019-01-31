@@ -1,47 +1,47 @@
 /* 撑满整个高度 为了section到100%所以body也要100%以此类推 */
 html, body, section {
-  height: 100%;
-  overflow: hidden;
+    height: 100%;
+    overflow: hidden;
 }
 
 .layout {
-  border: 5px solid rgb(235, 175, 152);
-  display: flex;
-  margin: 0 auto;
-  width: 160vh;
-  height: calc(100% - 24vh);
+    border: 5px solid rgb(235, 175, 152);
+    display: flex;
+    margin: 0 auto;
+    width: 160vh;
+    height: calc(100% - 24vh);
 }
 
-.layout .picture figure { 
-  border: 5px solid rgb(139, 40, 0);
-  background-size: cover;
-  background: url(https://pic.xiami.net/images/album/img63/92563/4562501312188937.jpg?x-oss-process=image/resize,limit_0,s_410,m_fill) no-repeat center center;
-  margin: 30px 5vh;
-  width: 40vh;
-  height: 40vh;
+.layout .picture figure {
+    border: 5px solid rgb(139, 40, 0);
+    background-size: cover;
+    background: url(https://pic.xiami.net/images/album/img63/92563/4562501312188937.jpg?x-oss-process=image/resize,limit_0,s_410,m_fill) no-repeat center center;
+    margin: 30px 5vh;
+    width: 40vh;
+    height: 40vh;
 }
 
 .layout .picture .pic-button {
-  border: 5px solid rgb(139, 40, 0);
-  display: flex;
-  justify-content: space-between;
-  margin: 0 auto;
-  width: 40vh;
+    border: 5px solid rgb(139, 40, 0);
+    display: flex;
+    justify-content: space-between;
+    margin: 0 auto;
+    width: 40vh;
 }
 
 
 .layout .picture .pic-button .iconfont {
-  border: 1px solid red;
-  font-size: 6vh;
-  text-align: center;
-  padding: 0 2vh;
-  color: #444;
-  cursor: pointer;
-  transition: color .4s;
+    border: 1px solid red;
+    font-size: 6vh;
+    text-align: center;
+    padding: 0 2vh;
+    color: #444;
+    cursor: pointer;
+    transition: color .4s;
 }
 
 .layout .picture .pic-button .iconfont:hover {
-  color: #fff;
+    color: #fff;
 }
 
 /* .iconfont.icon-loveit {
@@ -49,189 +49,189 @@ html, body, section {
 } */
 
 .iconfont.icon-pause {
-  display: none;
+    display: none;
 }
 
 .picture {
-  border: 5px solid lightblue;
-  width: 50vh;
-  /* height: 80vh; */
+    border: 5px solid lightblue;
+    width: 50vh;
+    /* height: 80vh; */
 }
 
 .name {
-  border: 5px solid rgb(52, 20, 139);
-  flex: 1;
-  padding-left: 6vh;
-  /* height: 80vh; */
+    border: 5px solid rgb(52, 20, 139);
+    flex: 1;
+    padding-left: 6vh;
+    /* height: 80vh; */
 }
 
 .name .album-name {
-  display: inline-block;
-  margin-top: 30px;
-  padding: 0.5vh 1vh;
-  font-size: 2vh;
-  background: rgb(0, 1, 75);
-  color: #fff;
+    display: inline-block;
+    margin-top: 30px;
+    padding: 0.5vh 1vh;
+    font-size: 2vh;
+    background: rgb(0, 1, 75);
+    color: #fff;
 }
 
 .name .name-button {
-  border: 1px solid rgb(33, 156, 64);
-  display: flex;
-  /* justify-content: space-between; */
-  margin-right: 5vh;
-  margin-top: 10vh;
-  color: #fff;
+    border: 1px solid rgb(33, 156, 64);
+    display: flex;
+    /* justify-content: space-between; */
+    margin-right: 5vh;
+    margin-top: 10vh;
+    color: #fff;
 }
 
 .name .name-button .iconfont {
-  border: 1px solid rgb(7, 77, 124);
-  flex: 1;
-  font-size: 2vh;
+    border: 1px solid rgb(7, 77, 124);
+    flex: 1;
+    font-size: 2vh;
 }
 
 .name .song-name {
-  margin: 3vh 0;
-  color: #fff;
-  font-size: 4vh;
+    margin: 3vh 0;
+    color: #fff;
+    font-size: 4vh;
 }
 
 .name .area-bar {
-  border: 2px solid rgb(33, 156, 64);
-  display: flex;
-  margin-top: 8vh;
-  margin-right: 5vh;
-  max-width: 1200px;
-  align-items: center;
+    border: 2px solid rgb(33, 156, 64);
+    display: flex;
+    margin-top: 8vh;
+    margin-right: 5vh;
+    max-width: 1200px;
+    align-items: center;
 }
 
 .name .area-bar .progress-bar {
-  position: relative;
-  flex: 1;
-  margin-right: 1vh;
-  height: 0.8vh;
-  border-radius: 0.2vh;
-  background: rgba(255, 255, 255, 0.5);
+    position: relative;
+    flex: 1;
+    margin-right: 1vh;
+    height: 0.8vh;
+    border-radius: 0.2vh;
+    background: rgba(255, 255, 255, 0.5);
 }
 
 .name .area-bar .progress-bar .bar {
-  position: absolute;
-  width: 25%;
-  height: 0.8vh;
-  border-radius: 0.2vh;
-  background: rgb(255, 255, 255);
+    position: absolute;
+    width: 25%;
+    height: 0.8vh;
+    border-radius: 0.2vh;
+    background: rgb(255, 255, 255);
 }
 
 .name .area-bar .current-time {
-  font-size: 2vh;
-  color: #fff;
+    font-size: 2vh;
+    color: #fff;
 }
 
 .name .author {
-  margin-top: 3vh;
-  font-size: 3vh;
-  color: rgba(255, 255, 255, 0.5);
+    margin-top: 3vh;
+    font-size: 3vh;
+    color: rgba(255, 255, 255, 0.5);
 }
 
 .name .lrc {
-  margin-top: 3vh;
-  font-size: 4vh;
-  color: rgba(255, 255, 255, 0.8);
+    margin-top: 3vh;
+    font-size: 4vh;
+    color: rgba(255, 255, 255, 0.8);
 }
-
 
 
 .background {
-  position: absolute;
-  z-index: -1;
-  top: -10px;
-  right: -10px;
-  bottom: -10px;
-  left: -10px;
-  background: url(https://pic.xiami.net/images/album/img63/92563/4562501312188937.jpg?x-oss-process=image/resize,limit_0,s_410,m_fill) no-repeat;
-  background-size: cover;
-  filter: blur(4px);   
-  /* 滤镜 */
+    position: absolute;
+    z-index: -1;
+    top: -10px;
+    right: -10px;
+    bottom: -10px;
+    left: -10px;
+    background: url(https://pic.xiami.net/images/album/img63/92563/4562501312188937.jpg?x-oss-process=image/resize,limit_0,s_410,m_fill) no-repeat;
+    background-size: cover;
+    filter: blur(4px);
+    /* 滤镜 */
 }
 
 .background::before {
-  content: '';
-  position: absolute;
-  top: 0px;
-  right: 0px;
-  bottom: 0px;
-  left: 0px;
-  background: rgba(0, 0, 0, 0.3);
-  /* 让背景和专辑封面略有区分 */
+    content: '';
+    position: absolute;
+    top: 0px;
+    right: 0px;
+    bottom: 0px;
+    left: 0px;
+    background: rgba(0, 0, 0, 0.3);
+    /* 让背景和专辑封面略有区分 */
 }
 
 footer {
-  border: 5px solid rgb(33, 156, 64);
-  margin: 0 auto;
-  height: 24vh;
-  background: rgba(255, 255, 255, 0.5);
-  box-shadow: 0 -.25vh .25vh .25vh rgba(0, 0, 0, 0.8);
-  min-width: 1200px;
+    border: 5px solid rgb(33, 156, 64);
+    margin: 0 auto;
+    height: 24vh;
+    background: rgba(255, 255, 255, 0.5);
+    box-shadow: 0 -.25vh .25vh .25vh rgba(0, 0, 0, 0.8);
+    min-width: 1200px;
 }
 
 footer .box {
-  position: relative;
+    position: relative;
 }
 
 footer .box.layout .iconfont {
-  /* border: 1px solid rgb(33, 156, 64); */
-  position: absolute;
-  margin-top: 5vh;
-  font-size: 8vh;
-  color: rgba(0, 0, 0, 0.3);
-  cursor: pointer;
-  transition: color .4s;
-  opacity: 0;
+    /* border: 1px solid rgb(33, 156, 64); */
+    position: absolute;
+    margin-top: 5vh;
+    font-size: 8vh;
+    color: rgba(0, 0, 0, 0.3);
+    cursor: pointer;
+    transition: color .4s;
+    opacity: 0;
 }
 
 
 footer .icon-arrow_left {
-  left: -8vh;
+    left: -8vh;
 }
 
 footer .icon-arrow_right {
-  right: -8vh;
+    right: -8vh;
 }
 
 footer:hover .box .iconfont {
-  opacity: 1;
+    opacity: 1;
 }
 
 footer .box.layout .iconfont:hover {
-  font-size: 8vh;
-  color: #fff;
+    font-size: 8vh;
+    color: #fff;
 }
 
 footer ul {
-  border: 5px solid rgb(33, 156, 64);
-  display: flex;
-  margin: 1vh auto 0;
-  width: 160vh;
+    border: 5px solid rgb(33, 156, 64);
+    display: flex;
+    overflow: hidden;
+    margin: 1vh auto 0;
+    width: 160vh;
 }
 
 footer ul li {
-  margin: 0 1vh;
-  cursor: pointer;
+    margin: 0 1vh;
+    cursor: pointer;
 }
 
 footer ul li:hover {
-  box-shadow: 0 -.25vh .25vh .25vh rgba(255, 255, 255, 0.8);
+    box-shadow: 0 -.25vh .25vh .25vh rgba(255, 255, 255, 0.8);
 }
 
-footer ul li .cover{
-  /*border: 5px solid rgb(33, 156, 64);*/
-  width: 18vh;
-  height: 16vh;
-  background-size: cover;
-  background-position: center center;
+footer ul li .cover {
+    /*border: 5px solid rgb(33, 156, 64);*/
+    width: 18vh;
+    height: 16vh;
+    background-size: cover;
+    background-position: center center;
 }
 
-footer ul li h3{
-  font-size: 2vh;
-  text-align: center;
-  color: rgba(0, 0, 0, 0.8);
+footer ul li h3 {
+    font-size: 2vh;
+    text-align: center;
+    color: rgba(0, 0, 0, 0.8);
 }

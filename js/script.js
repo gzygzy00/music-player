@@ -1,12 +1,15 @@
 var Footer = {
     init: function () {
-        this.$footer = $('footer');
+        // this.$footer = $('footer');
         this.bind();
         this.render()
     },
 
     bind: function () {
-
+        var _this = this
+        $(window).resize(function () {
+            _this.setStyle()
+        })
     },
 
     render: function () {
@@ -21,7 +24,7 @@ var Footer = {
 
     renderFooter: function (channels) {
         console.log('renderFooter');
-        var _this = this
+        var _this = this;
         channels.forEach(function (channel) {
             template = `
                 <li data-channel-id="">
@@ -34,8 +37,14 @@ var Footer = {
             $node.find('h3').text(channel.name)
             $('footer ul').append($node)
         })
+    },
 
+    setStyle: function () {
+        var count = $('footer').find('ul li').length;
+        var width = $('footer').find('ul').outerWidth(true)
+        $('footer').find('ul').css({width: count * width + "px"})
     }
+    //刷新的时候正常 resize屏幕后效果消失
 }
 
 
