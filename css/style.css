@@ -13,10 +13,9 @@ html, body, section {
 }
 
 .layout .picture figure { 
-  border: 5px solid rgb(139, 40, 0); 
-  background: url(https://pic.xiami.net/images/album/img63/92563/4562501312188937.jpg?x-oss-process=image/resize,limit_0,s_410,m_fill) no-repeat;
+  border: 5px solid rgb(139, 40, 0);
   background-size: cover;
-  background-position:center center;
+  background: url(https://pic.xiami.net/images/album/img63/92563/4562501312188937.jpg?x-oss-process=image/resize,limit_0,s_410,m_fill) no-repeat center center;
   margin: 30px 5vh;
   width: 40vh;
   height: 40vh;
@@ -224,7 +223,7 @@ footer ul li:hover {
 }
 
 footer ul li .cover{
-  border: 5px solid rgb(33, 156, 64);
+  /*border: 5px solid rgb(33, 156, 64);*/
   width: 18vh;
   height: 16vh;
   background-size: cover;
