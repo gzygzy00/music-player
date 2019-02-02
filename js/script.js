@@ -1,6 +1,7 @@
 var Footer = {
     init: function () {
-        // this.$footer = $('footer');
+        this.$footer = $('footer');
+        this.$ul = this.$footer.find('ul')
         this.bind();
         this.render()
     },
@@ -8,6 +9,7 @@ var Footer = {
     bind: function () {
         var _this = this
         $(window).resize(function () {
+            console.log('ok');
             _this.setStyle()
         })
     },
@@ -35,14 +37,15 @@ var Footer = {
             $node.attr('data-channel-id', channel.channel_id)
             $node.find('div').attr('style', 'background-image:url(' + channel.cover_small + ')')
             $node.find('h3').text(channel.name)
-            $('footer ul').append($node)
+            _this.$ul.append($node)
         })
     },
 
     setStyle: function () {
-        var count = $('footer').find('ul li').length;
-        var width = $('footer').find('ul').outerWidth(true)
-        $('footer').find('ul').css({width: count * width + "px"})
+        var count = this.$footer.find('ul li').length;
+        var width = this.$footer.find('ul li').outerWidth(true)
+        this.$ul.css({width: count * width + "px"})
+        console.log(count, width);
     }
     //刷新的时候正常 resize屏幕后效果消失
 }

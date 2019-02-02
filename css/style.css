@@ -155,10 +155,10 @@ html, body, section {
 .background::before {
     content: '';
     position: absolute;
-    top: 0px;
-    right: 0px;
-    bottom: 0px;
-    left: 0px;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
     background: rgba(0, 0, 0, 0.3);
     /* 让背景和专辑封面略有区分 */
 }
@@ -172,11 +172,11 @@ footer {
     min-width: 1200px;
 }
 
-footer .box {
+footer .layout {
     position: relative;
 }
 
-footer .box.layout .iconfont {
+footer .iconfont {
     /* border: 1px solid rgb(33, 156, 64); */
     position: absolute;
     margin-top: 5vh;
@@ -196,21 +196,30 @@ footer .icon-arrow_right {
     right: -8vh;
 }
 
-footer:hover .box .iconfont {
+footer:hover .iconfont {
     opacity: 1;
 }
 
-footer .box.layout .iconfont:hover {
+footer .layout .iconfont:hover {
     font-size: 8vh;
     color: #fff;
 }
 
+footer .box {
+    position: relative;
+    overflow: hidden;
+    margin: 0 auto;
+    height: 24vh;
+    width: 160vh;
+}
+
+
 footer ul {
     border: 5px solid rgb(33, 156, 64);
+    position: absolute;
+    left: 0;
     display: flex;
-    overflow: hidden;
     margin: 1vh auto 0;
-    width: 160vh;
 }
 
 footer ul li {
