@@ -215,7 +215,7 @@ footer .box {
 
 
 footer ul {
-    border: 5px solid rgb(33, 156, 64);
+    /*border: 5px solid rgb(33, 156, 64);*/
     position: absolute;
     left: 0;
     display: flex;
@@ -223,7 +223,7 @@ footer ul {
 }
 
 footer ul li {
-    margin: 0 1vh;
+    margin-right: 6vh;
     cursor: pointer;
 }
 
