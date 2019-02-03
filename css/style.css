@@ -224,6 +224,7 @@ footer ul {
 
 footer ul li {
     margin-right: 6vh;
+    margin-left: 1vh;
     cursor: pointer;
 }
 
@@ -237,6 +238,10 @@ footer ul li .cover {
     height: 16vh;
     background-size: cover;
     background-position: center center;
+}
+
+footer ul li.active {
+    box-shadow: 0 -.25vh .25vh .25vh rgba(255, 255, 255, 0.8);
 }
 
 footer ul li h3 {

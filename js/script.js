@@ -1,3 +1,30 @@
+// var EventCenter = {
+//     on: function(type, handler){
+//         document.addEventListener(type, handler)
+//     },               //有一个on的方法，声明（事件，处理方法）。
+//     fire: function(type, data){
+//         return document.dispatchEvent(new CustomEvent(type, {
+//             detail: data
+//         }))
+//     }
+// }
+// //声明一个对象EventCenter
+//
+// EventCenter.on('hello', function(e){
+//     console.log(e.detail)
+// })        //EventCenter.on听到hello时，执行后面的方法，输出当前事件的内容。
+//
+// EventCenter.fire('hello', '你好')      //这里把事件hello触发传播出来了
+
+var EventCenter = {
+    on: function (type, handler) {
+        $(document).on(type, handler)
+    },
+    fire: function (type, data) {
+        $(document).trigger(type, data)
+    }
+}
+
 var Footer = {
     init: function () {
         this.$footer = $('footer');
@@ -44,12 +71,21 @@ var Footer = {
                     left: "+=" + rowCount * itemWidth
                 }, 400, function () {
                     _this.isToEnd = false
-                    if (parseFloat(_this.$ul.css('left')) >= 0 ) {
+                    if (parseFloat(_this.$ul.css('left')) >= 0) {
                         _this.isToStart = true
                     }
                 })
             }
         })
+
+        this.$footer.on('click', 'li', function () {
+            $(this).addClass('active')
+                .siblings().removeClass('active')
+
+            EventCenter.fire('select-album', $(this).attr('data-channel-id'))
+        })
+
+
 
     },
 
@@ -90,3 +126,6 @@ var Footer = {
 
 
 Footer.init()
+EventCenter.on('select-album', function (e, data) {
+    console.log('select', data);
+})
