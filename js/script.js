@@ -34,6 +34,7 @@ var Footer = {
         this.$rightButton = this.$footer.find('.icon-arrow_right')
         this.isToEnd = false
         this.isToStart = true
+        this.isAnimate = false
         this.bind();
         this.render()
     },
@@ -49,13 +50,19 @@ var Footer = {
             var itemWidth = _this.$footer.find('li').outerWidth(true)
             var rowCount = Math.floor(_this.$box.width() / itemWidth)
 
+            if (_this.isAnimate) return
+
             if (!_this.isToEnd) {
+                _this.isAnimate = true
                 _this.$ul.animate({
                     left: "-=" + rowCount * itemWidth
                 }, 400, function () {
                     _this.isToStart = false
+                    _this.isAnimate = false
+
                     if (_this.$box.width() - parseFloat(_this.$ul.css('left')) >= parseFloat(_this.$ul.css('width'))) {
                         _this.isToEnd = true
+
                         // _this.$rightButton.addClass('disabled')
                     }
                 })
@@ -65,11 +72,13 @@ var Footer = {
         this.$leftButton.on('click', function () {
             var itemWidth = _this.$footer.find('li').outerWidth(true)
             var rowCount = Math.floor(_this.$box.width() / itemWidth)
-
+            if (_this.isAnimate) return
             if (!_this.isToStart) {
+                _this.isAnimate = true
                 _this.$ul.animate({
                     left: "+=" + rowCount * itemWidth
                 }, 400, function () {
+                    _this.isAnimate = false
                     _this.isToEnd = false
                     if (parseFloat(_this.$ul.css('left')) >= 0) {
                         _this.isToStart = true
@@ -84,7 +93,6 @@ var Footer = {
 
             EventCenter.fire('select-album', $(this).attr('data-channel-id'))
         })
-
 
 
     },
