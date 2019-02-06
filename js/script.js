@@ -134,6 +134,9 @@ var Footer = {
 
 var Fm = {
     init: function () {
+        this.$container = $('.page-music')
+        this.audio = new Audio()
+        this.audio.autoplay = true
         this.bind()
     },
 
@@ -159,8 +162,10 @@ var Fm = {
             console.log('error..');
         })
     },
-    
+
     setMusic: function () {
+        // this.$container.find('')
+        this.audio.src = this.song.url
         console.log('set music');
         console.log(this.song);
     }
