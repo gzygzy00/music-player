@@ -91,7 +91,10 @@ var Footer = {
             $(this).addClass('active')
                 .siblings().removeClass('active')
 
-            EventCenter.fire('select-album', $(this).attr('data-channel-id'))
+            EventCenter.fire('select-album', {
+                channelId: $(this).attr('data-channel-id'),
+                channelName: $(this).attr('data-channel-name')
+            })
         })
 
 
@@ -113,12 +116,13 @@ var Footer = {
         var _this = this;
         channels.forEach(function (channel) {
             template = `
-                <li data-channel-id="">
+                <li data-channel-id="" data-channel-name="">
                     <div class="cover" style="background-image:url(image/gudazi.jpeg)"></div>
                     <h3>咕哒子</h3>
                 </li>`
             var $node = $(template)
             $node.attr('data-channel-id', channel.channel_id)
+            $node.attr('data-channel-name', channel.name)
             $node.find('div').attr('style', 'background-image:url(' + channel.cover_small + ')')
             $node.find('h3').text(channel.name)
             _this.$ul.append($node)
@@ -142,8 +146,9 @@ var Fm = {
 
     bind: function () {
         var _this = this
-        EventCenter.on('select-album', function (e, channelId) {
-            _this.channelId = channelId
+        EventCenter.on('select-album', function (e, channelObj) {
+            _this.channelId = channelObj.channelId
+            _this.channelName = channelObj.channelName
             // console.log('select', channelId)
             _this.loadMusic(function () {
                 _this.setMusic()
@@ -164,10 +169,14 @@ var Fm = {
     },
 
     setMusic: function () {
-        // this.$container.find('')
         this.audio.src = this.song.url
         console.log('set music');
         console.log(this.song);
+        $('.background').css('background-image', `url(${this.song.picture})`)
+        this.$container.find('.picture figure').css('background-image', `url(${this.song.picture})`)
+        this.$container.find('.name .song-name').text(this.song.title)
+        this.$container.find('.name .author').text(this.song.artist)
+        this.$container.find('.name .album-name').text(this.channelName)
     }
 }
 
