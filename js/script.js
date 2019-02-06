@@ -132,8 +132,40 @@ var Footer = {
     }
 }
 
+var Fm = {
+    init: function () {
+        this.bind()
+    },
+
+    bind: function () {
+        var _this = this
+        EventCenter.on('select-album', function (e, channelId) {
+            _this.channelId = channelId
+            // console.log('select', channelId)
+            _this.loadMusic(function () {
+                _this.setMusic()
+            })
+
+        })
+    },
+
+    loadMusic: function (callback) {
+        var _this = this
+        console.log('load music');
+        $.getJSON('//jirenguapi.applinzi.com/fm/getSong.php', {channel: this.channelId}).done(function (ret) {
+            _this.song = ret.song[0]
+            callback()
+        }).fail(function () {
+            console.log('error..');
+        })
+    },
+    
+    setMusic: function () {
+        console.log('set music');
+        console.log(this.song);
+    }
+}
+
 
 Footer.init()
-EventCenter.on('select-album', function (e, data) {
-    console.log('select', data);
-})
+Fm.init()
