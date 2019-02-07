@@ -5,7 +5,7 @@ html, body, section {
 }
 
 .layout {
-    border: 5px solid rgb(235, 175, 152);
+    /*border: 5px solid rgb(235, 175, 152);*/
     display: flex;
     margin: 0 auto;
     width: 160vh;
@@ -13,7 +13,7 @@ html, body, section {
 }
 
 .layout .picture figure {
-    border: 5px solid rgb(139, 40, 0);
+    /*border: 5px solid rgb(139, 40, 0);*/
     background-size: cover;
     background: url(https://pic.xiami.net/images/album/img63/92563/4562501312188937.jpg?x-oss-process=image/resize,limit_0,s_410,m_fill) no-repeat center center;
     margin: 30px 5vh;
@@ -51,13 +51,13 @@ main .picture .pic-button .iconfont:hover {
 
 
 .picture {
-    border: 5px solid lightblue;
+    /*border: 5px solid lightblue;*/
     width: 50vh;
     /* height: 80vh; */
 }
 
 .name {
-    border: 5px solid rgb(52, 20, 139);
+    /*border: 5px solid rgb(52, 20, 139);*/
     flex: 1;
     padding-left: 6vh;
     /* height: 80vh; */
@@ -73,7 +73,7 @@ main .picture .pic-button .iconfont:hover {
 }
 
 .name .name-button {
-    border: 1px solid rgb(33, 156, 64);
+    /*border: 1px solid rgb(33, 156, 64);*/
     display: flex;
     align-items: center;
     /* justify-content: space-between; */
@@ -83,7 +83,7 @@ main .picture .pic-button .iconfont:hover {
 }
 
 .name .name-button .iconfont {
-    border: 1px solid rgb(7, 77, 124);
+    /*border: 1px solid rgb(7, 77, 124);*/
     flex: 1;
     font-size: 2vh;
 }
@@ -95,7 +95,7 @@ main .picture .pic-button .iconfont:hover {
 }
 
 .name .area-bar {
-    border: 2px solid rgb(33, 156, 64);
+    /*border: 2px solid rgb(33, 156, 64);*/
     display: flex;
     margin-top: 8vh;
     margin-right: 5vh;
@@ -114,7 +114,7 @@ main .picture .pic-button .iconfont:hover {
 
 .name .area-bar .progress-bar .bar {
     position: absolute;
-    width: 25%;
+    /*width: 25%;*/
     height: 0.8vh;
     border-radius: 0.2vh;
     background: rgb(255, 255, 255);
@@ -164,7 +164,7 @@ main .picture .pic-button .iconfont:hover {
 }
 
 footer {
-    border: 5px solid rgb(33, 156, 64);
+    /*border: 5px solid rgb(33, 156, 64);*/
     margin: 0 auto;
     height: 24vh;
     background: rgba(255, 255, 255, 0.5);
@@ -223,6 +223,7 @@ footer ul {
 }
 
 footer ul li {
+    margin-top: 2vh;
     margin-right: 6vh;
     margin-left: 1vh;
     cursor: pointer;

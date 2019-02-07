@@ -206,6 +206,7 @@ var Fm = {
         this.$container.find('.name .song-name').text(this.song.title)
         this.$container.find('.name .author').text(this.song.artist)
         this.$container.find('.name .album-name').text(this.channelName)
+        this.$container.find('.button-play').removeClass('icon-play').addClass('icon-pause')
     },
 
     updateStatus: function () {
