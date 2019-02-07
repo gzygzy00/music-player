@@ -153,7 +153,36 @@ var Fm = {
             _this.loadMusic(function () {
                 _this.setMusic()
             })
+        })
 
+        this.$container.find('.button-play').on('click', function () {
+            var $btn = $(this)
+            if ($btn.hasClass('icon-play')) {
+                $btn.removeClass('icon-play').addClass('icon-pause')
+                _this.audio.play()
+            } else {
+                $btn.removeClass('icon-pause').addClass('icon-play')
+                _this.audio.pause()
+            }
+        })
+
+        this.$container.find('.button-next').on('click', function () {
+            _this.loadMusic(function () {
+                _this.setMusic()
+            })
+        })
+
+        this.audio.addEventListener('play', function () {
+            console.log('play');
+            setInterval(function () {
+                clearInterval(_this.statusClock)
+                _this.statusClock = _this.updateStatus()
+            }, 1000)
+        })
+
+        this.audio.addEventListener('pause', function () {
+            console.log('pause');
+            clearInterval(_this.statusClock)
         })
     },
 
@@ -177,6 +206,16 @@ var Fm = {
         this.$container.find('.name .song-name').text(this.song.title)
         this.$container.find('.name .author').text(this.song.artist)
         this.$container.find('.name .album-name').text(this.channelName)
+    },
+
+    updateStatus: function () {
+        var minute = Math.floor(this.audio.currentTime / 60)
+        var second = Math.floor(this.audio.currentTime % 60) + ''
+        //加空格变成字符串
+        second = second.length === 2 ? second : '0' + second
+        this.$container.find('.current-time').text(`${minute}:${second}`)
+        this.$container.find('.progress-bar .bar').css('width', this.audio.currentTime / this.audio.duration * 100 + '%')
+        console.log('+1s')
     }
 }
 

@@ -21,17 +21,18 @@ html, body, section {
     height: 40vh;
 }
 
-.layout .picture .pic-button {
-    border: 5px solid rgb(139, 40, 0);
+main .picture .pic-button {
+    /*border: 5px solid rgb(139, 40, 0);*/
     display: flex;
     justify-content: space-between;
+    align-items: center;
     margin: 0 auto;
     width: 40vh;
 }
 
 
-.layout .picture .pic-button .iconfont {
-    border: 1px solid red;
+main .picture .pic-button .iconfont {
+    /*border: 1px solid red;*/
     font-size: 6vh;
     text-align: center;
     padding: 0 2vh;
@@ -40,7 +41,7 @@ html, body, section {
     transition: color .4s;
 }
 
-.layout .picture .pic-button .iconfont:hover {
+main .picture .pic-button .iconfont:hover {
     color: #fff;
 }
 
@@ -48,9 +49,6 @@ html, body, section {
   margin-left: -5vh;
 } */
 
-.iconfont.icon-pause {
-    display: none;
-}
 
 .picture {
     border: 5px solid lightblue;
@@ -77,6 +75,7 @@ html, body, section {
 .name .name-button {
     border: 1px solid rgb(33, 156, 64);
     display: flex;
+    align-items: center;
     /* justify-content: space-between; */
     margin-right: 5vh;
     margin-top: 10vh;
@@ -119,6 +118,7 @@ html, body, section {
     height: 0.8vh;
     border-radius: 0.2vh;
     background: rgb(255, 255, 255);
+    transition: width .8s;
 }
 
 .name .area-bar .current-time {
