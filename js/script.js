@@ -167,8 +167,6 @@ var Fm = {
 
         this.$container.find('.button-next').on('click', function () {
             _this.loadMusic()
-            _this.setMusic()
-
         })
 
         this.audio.addEventListener('play', function () {
@@ -239,10 +237,31 @@ var Fm = {
         this.$container.find('.progress-bar .bar').css('width', this.audio.currentTime / this.audio.duration * 100 + '%')
         // console.log('+1s')
         var line = this.lyricObj['0' + minute + ':' + second]
-        if(line){
-            this.$container.find('.lrc p').text(line)
+        if (line) {
+            this.$container.find('.lrc p').text(line).boomText('fadeInLeft')
         }
     }
+}
+
+
+//字体效果
+$.fn.boomText = function (type) {
+    type = type || 'rollIn'
+    this.html(function () {
+        var arr = $(this).text().split('').map(function (word) {
+            return '<span style="opacity:0;display:inline-block">' + word + '</span>'
+        })
+        return arr.join('')
+    })
+    var index = 0
+    var $boomTexts = $(this).find('span')
+    var clock = setInterval(function () {
+        $boomTexts.eq(index).addClass('animated ' + type)
+        index++
+        if (index >= $boomTexts.length) {
+            clearInterval(clock)
+        }
+    }, 100)
 }
 
 
