@@ -150,9 +150,8 @@ var Fm = {
             _this.channelId = channelObj.channelId
             _this.channelName = channelObj.channelName
             // console.log('select', channelId)
-            _this.loadMusic(function () {
-                _this.setMusic()
-            })
+            _this.loadMusic()
+
         })
 
         this.$container.find('.button-play').on('click', function () {
@@ -167,9 +166,9 @@ var Fm = {
         })
 
         this.$container.find('.button-next').on('click', function () {
-            _this.loadMusic(function () {
-                _this.setMusic()
-            })
+            _this.loadMusic()
+            _this.setMusic()
+
         })
 
         this.audio.addEventListener('play', function () {
@@ -186,12 +185,13 @@ var Fm = {
         })
     },
 
-    loadMusic: function (callback) {
+    loadMusic: function () {
         var _this = this
         console.log('load music');
         $.getJSON('//jirenguapi.applinzi.com/fm/getSong.php', {channel: this.channelId}).done(function (ret) {
             _this.song = ret.song[0]
-            callback()
+            _this.setMusic()
+            _this.loadLyric()
         }).fail(function () {
             console.log('error..');
         })
@@ -209,6 +209,27 @@ var Fm = {
         this.$container.find('.button-play').removeClass('icon-play').addClass('icon-pause')
     },
 
+    loadLyric: function () {
+        var _this = this
+        $.getJSON('//jirenguapi.applinzi.com/fm/getLyric.php', {sid: this.song.sid}).done(function (ret) {
+            console.log(ret)
+            var lyric = ret.lyric
+            var lyricObj = {}
+            lyric.split('\n').forEach(function (line) {
+                var times = line.match(/\d{2}:\d{2}/g)
+                var str = line.replace(/\[.+?\]/g, '')
+                if (Array.isArray(times)) {
+                    times.forEach(function (time) {
+                        lyricObj[time] = str
+                    })
+                }
+            })
+            _this.lyricObj = lyricObj
+        }).fail(function () {
+            console.log('error');
+        })
+    },
+
     updateStatus: function () {
         var minute = Math.floor(this.audio.currentTime / 60)
         var second = Math.floor(this.audio.currentTime % 60) + ''
@@ -216,7 +237,11 @@ var Fm = {
         second = second.length === 2 ? second : '0' + second
         this.$container.find('.current-time').text(`${minute}:${second}`)
         this.$container.find('.progress-bar .bar').css('width', this.audio.currentTime / this.audio.duration * 100 + '%')
-        console.log('+1s')
+        // console.log('+1s')
+        var line = this.lyricObj['0' + minute + ':' + second]
+        if(line){
+            this.$container.find('.lrc p').text(line)
+        }
     }
 }
 

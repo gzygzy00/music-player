@@ -129,13 +129,13 @@ main .picture .pic-button .iconfont:hover {
 .name .author {
     margin-top: 3vh;
     font-size: 3vh;
-    color: rgba(255, 255, 255, 0.5);
+    color: rgba(255, 255, 255, 0.8);
 }
 
 .name .lrc {
     margin-top: 3vh;
     font-size: 4vh;
-    color: rgba(255, 255, 255, 0.8);
+    color: rgba(255, 255, 255, 0.5);
 }
 
 
