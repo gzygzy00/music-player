@@ -1,6 +1,6 @@
 # music-player
 [响应式音乐播放器](https://gzygzy00.github.io/music-player/)
-* XD Music Player
+* 简简单单 Music Player
 * 一个简单的响应式页面音乐播放器，可以点击页面下方专辑进行音乐播放，已有暂停、播放下一首等功能，可以显示对应歌曲相关信息，并加入了一个可以显示 CSS3 动画的小功能来改变歌词字体效果。
 1. 使用'vh'代替'px'使页面具有响应式；
 2. js 中分为 Footer（专辑频道）和 Fm（音乐播放和相关信息）两块；JQuery $.getJSON；
